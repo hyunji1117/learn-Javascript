@@ -23,3 +23,13 @@
 *****
 */
 
+const fs = require('fs');
+const input = parseInt(fs.readFileSync('/dev/stdin').toString().trim(), 10);
+
+for (let i = 0; i < input; i++) {
+  let star = '';
+  for (let k = 0; k <= i; k++) {
+    star += '*';
+  }
+  console.log(star);
+}

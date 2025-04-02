@@ -1,4 +1,4 @@
-/*
+/* re
 제목: 1998년생인 내가 태국에서는 2541년생?!
 설명: 식을 직접 세워서 계산하는 문제
 제출: https://www.acmicpc.net/submit/18108
@@ -22,3 +22,9 @@ ICPC Bangkok Regional에 참가하기 위해 수완나품 국제공항에 막 �
 1998
 */
 
+const input = require('fs').readFileSync('/dev/stdin').toString().trim();
+
+const buddhistYear = parseInt(input, 10);
+const adYear = buddhistYear - 543;
+
+console.log(adYear);

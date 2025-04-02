@@ -1,4 +1,4 @@
-/*
+/* re
 제목: 알람 시계
 설명: 시간 계산 문제
 제출: https://www.acmicpc.net/submit/2884
@@ -40,3 +40,25 @@
 22 55
 */
 
+// 입력받기
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split(' ');
+
+// 현재 시간 H와 M
+let H = parseInt(input[0], 10);
+let M = parseInt(input[1], 10);
+
+// 45분 일찍 설정
+M -= 45; // 분에서 45를 뺌
+
+if (M < 0) { // 분이 음수가 되면
+  M += 60; // 60분을 더해주고
+  H -= 1; // 시간을 1시간 줄임
+}
+
+if (H < 0) { // 시간이 음수가 되면
+  H = 23; // 23시로 설정
+}
+
+// 결과 출력
+console.log(H, M);

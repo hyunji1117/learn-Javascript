@@ -1,4 +1,4 @@
-/*
+/* re
 제목: 나머지
 설명: 네 개의 계산식을 계산하는 문제. 이 문제를 푼 다음에는 직접 입력을 만들어서 넣어 봅시다. 어떤 사실을 관찰할 수 있나요?
 제출: https://www.acmicpc.net/submit/10430
@@ -24,3 +24,17 @@
 0
 */
 
+const input = require('fs').readFileSync('/dev/stdin').toString().trim().split(' ');
+const A = parseInt(input[0], 10);
+const B = parseInt(input[1], 10);
+const C = parseInt(input[2], 10);
+
+const result1 = (A + B) % C;
+const result2 = ((A % C) + (B % C)) % C;
+const result3 = (A * B) % C;
+const result4 = ((A % C) * (B % C)) % C;
+
+console.log(result1);
+console.log(result2);
+console.log(result3);
+console.log(result4);

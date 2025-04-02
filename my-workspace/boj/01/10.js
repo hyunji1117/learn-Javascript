@@ -1,4 +1,4 @@
-/*
+/* re
 제목: 곱셈
 설명: 빈 칸에 들어갈 수는?
 제출: https://www.acmicpc.net/submit/2588
@@ -34,11 +34,27 @@
 181720
 */
 
+// 입력받기
 const fs = require('fs');
 const inputData = fs.readFileSync(0).toString().trim().split('\n');
-console.log(inputData);
 
-const a = parseInt(inputData[0]);
-const b = parseInt(inputData[1]);
+// 첫 번째 숫자와 두 번째 숫자를 변수에 저장
+const a = parseInt(inputData[0], 10);
+const b = parseInt(inputData[1], 10);
 
-// console.log(a * b);
+// b의 각 자리수 분리
+const b1 = b % 10; // 1의 자리
+const b2 = Math.floor((b % 100) / 10); // 10의 자리
+const b3 = Math.floor(b / 100); // 100의 자리
+
+// 곱셈 결과 계산
+const result1 = a * b1; // 472 × 5
+const result2 = a * b2; // 472 × 8
+const result3 = a * b3; // 472 × 3
+const result4 = a * b;  // 최종 결과
+
+// 결과 출력
+console.log(result1);
+console.log(result2);
+console.log(result3);
+console.log(result4);

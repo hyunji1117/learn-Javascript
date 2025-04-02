@@ -1,4 +1,4 @@
-/*
+/* re
 제목: 개
 설명: ", `, \ 등의 문자에 주의하며 개를 출력하는 문제
 제출: https://www.acmicpc.net/submit/10172
@@ -21,3 +21,9 @@
 ||_/=\\__|
 */
 
+// 개 출력
+console.log("|\\_/|");
+console.log("|q p|   /}");
+console.log("( 0 )\"\"\"\\");
+console.log("|\"^\"`    |");
+console.log("||_/=\\\\__|");

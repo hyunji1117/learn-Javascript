@@ -1,4 +1,4 @@
-/*
+/* re
 제목: 주사위 세개
 설명: 조건에 따라 상금을 계산하는 문제
 제출: https://www.acmicpc.net/submit/2480
@@ -38,3 +38,29 @@
 600
 */
 
+// 입력받기
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split(' ').map(Number);
+
+// 주사위 눈
+const [a, b, c] = input;
+
+// 상금 계산
+let prize = 0;
+
+if (a === b && b === c) {
+  // 같은 눈이 3개
+  prize = 10000 + a * 1000;
+} else if (a === b || a === c) {
+  // 같은 눈이 2개 (a와 b 또는 a와 c)
+  prize = 1000 + a * 100;
+} else if (b === c) {
+  // 같은 눈이 2개 (b와 c)
+  prize = 1000 + b * 100;
+} else {
+  // 모두 다른 눈
+  prize = Math.max(a, b, c) * 100;
+}
+
+// 결과 출력
+console.log(prize);

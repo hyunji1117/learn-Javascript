@@ -1,4 +1,5 @@
-/*
+/* re
+
 제목: 별 찍기 - 2
 설명: 별을 찍는 문제 2
 제출: https://www.acmicpc.net/submit/2439
@@ -24,3 +25,13 @@
 *****
 */
 
+// 입력받기
+const fs = require('fs');
+const input = parseInt(fs.readFileSync('/dev/stdin').toString().trim(), 10);
+
+// 별 찍기
+for (let i = 1; i <= input; i++) {
+  const spaces = ' '.repeat(input - i); // 오른쪽 정렬을 위한 공백
+  const stars = '*'.repeat(i); // 별의 개수
+  console.log(spaces + stars); // 공백과 별을 합쳐 출력
+}

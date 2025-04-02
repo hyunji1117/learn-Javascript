@@ -1,4 +1,4 @@
-/*
+/* re
 제목: 구구단
 설명: 구구단을 출력하는 문제
 제출: https://www.acmicpc.net/submit/2739
@@ -27,3 +27,11 @@ N을 입력받은 뒤, 구구단 N단을 출력하는 프로그램을 작성하�
 2 * 9 = 18
 */
 
+// 입력받기
+const fs = require('fs');
+const input = parseInt(fs.readFileSync('/dev/stdin').toString().trim(), 10);
+
+// 구구단 출력
+for (let i = 1; i <= 9; i++) {
+  console.log(`${input} * ${i} = ${input * i}`);
+}

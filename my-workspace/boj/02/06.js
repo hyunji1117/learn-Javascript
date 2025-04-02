@@ -1,4 +1,4 @@
-/*
+/* re
 제목: 오븐 시계
 설명: 범위가 더 넓은 시간 계산 문제
 제출: https://www.acmicpc.net/submit/2525
@@ -39,3 +39,20 @@ KOI 전자에서는 건강에 좋고 맛있는 훈제오리구이 요리를 간�
 0 13
 */
 
+// 입력받기
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+
+// 현재 시각 (A: 시, B: 분)과 요리 시간 C
+const [A, B] = input[0].split(' ').map(Number);
+const C = parseInt(input[1], 10);
+
+// 총 분 계산
+let totalMinutes = A * 60 + B + C;
+
+// 종료 시각 계산
+const endHour = Math.floor(totalMinutes / 60) % 24; // 24시간 기준으로 시 계산
+const endMinute = totalMinutes % 60; // 분 계산
+
+// 결과 출력
+console.log(endHour, endMinute);

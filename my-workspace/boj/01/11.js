@@ -1,4 +1,4 @@
-/*
+/* re
 제목: 꼬마 정민
 설명: 더 큰 수를 더하는 문제
 제출: https://www.acmicpc.net/submit/11382
@@ -19,3 +19,16 @@ A+B+C의 값을 출력한다.
 7931
 */
 
+// 입력받기
+const input = require('fs').readFileSync('/dev/stdin').toString().trim().split(' ');
+
+// A, B, C를 숫자로 변환
+const A = BigInt(input[0]);
+const B = BigInt(input[1]);
+const C = BigInt(input[2]);
+
+// A + B + C 계산
+const result = A + B + C;
+
+// 결과 출력
+console.log(result.toString());
