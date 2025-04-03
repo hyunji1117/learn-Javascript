@@ -37,19 +37,37 @@ for (let i = n; i <= m; i++) {
   }
 }
 
-//  n ~ m 까지 홀수만 구분해서 출력하세요.
-for (let i = 1; i <= m; i++) {
-  if (i % 2 === 1)/* (i % 2 !== 0) */ {
-    console.log('홀수 출력: ', i);
+// 강사님 코드
+
+const n = 1;
+const m = 10;
+
+for (let i = n; i <= m; i++) {
+  //짝수확인
+  if (i % 2 == 0) {
+    console.log(i + "는 짝수입니다.");
+    break;
   }
 }
 
-//  n ~ m 까지 홀수와 짝수를 구분해서 출력하세요.
-for (let i = 1; i <= m; i++) {
-  if (i % 2 === 1)/* (i % 2 !== 0) */ {
-    console.log('홀수 출력: ', i);
-    continue; // 홀수일 때는 다음 반복으로 넘어감 (증감식 코드로 이동해라)
+// n부터 m까지 홀수만 출력하세요.
+for (let i = n; i <= m; i++) {
+  if (i % 2 === 1) {
+    console.log('홀수', i);
   }
-  console.log('짝수', i);
+}
 
+// n부터 m까지 홀수와 짝수를 구분해서 출력하세요.
+for (let i = n; i <= m; i++) {
+  if (i % 2 === 1) {
+    console.log('홀수', i);
+    continue;
+  }
+
+  console.log('짝수', i);
+  // 굉장히 많고
+  // 복잡한
+  // 코드가 
+  // 있을 수 
+  // 있습니다.
 }

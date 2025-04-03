@@ -18,6 +18,15 @@ for (let i = 1; i <= 9; i++) {
 } */
 
 
+// 강사님 코드
+const dan = 3;
+
+for (let i = 1; i <= 9; i++) {
+  console.log(dan + ' x ' + i + ' = ' + (dan * i));
+  console.log(`${dan} x ${i} = ${dan * i}`);
+}
+
+
 
 /*
 2단부터 9단까지 출력
@@ -38,6 +47,14 @@ for (let dan = 2; dan <= 9; dan++) {
   console.log('---------------------');
 } */
 
+// 강사님 코드
+for (let dan = 2; dan <= 9; dan++) {
+  for (let i = 1; i <= 9; i++) {
+    console.log(`${dan} x ${i} = ${dan * i}`);
+  }
+  console.log();
+}
+
 
 
 /* 
@@ -56,6 +73,15 @@ for (let dan = 2; dan <= 9; dan++) {
   let gugu = '';
   for (let i = 1; i <= 9; i++) {
     gugu += `${i} x ${dan} = ${dan * i}`.padEnd(12);
+  }
+  console.log(gugu);
+}
+
+// 강사님 코드
+for (let i = 1; i <= 9; i++) {
+  let gugu = '';
+  for (let dan = 2; dan <= 9; dan++) {
+    gugu += `${dan} x ${i} = ${dan * i}`.padEnd(12);
   }
   console.log(gugu);
 }
