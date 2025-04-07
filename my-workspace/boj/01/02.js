@@ -27,5 +27,3 @@ const a = parseInt(fileData[0]);
 const b = parseInt(fileData[1]);
 
 console.log(a + b);
-
-

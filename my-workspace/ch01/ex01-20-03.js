@@ -6,13 +6,14 @@
 */
 
 // 변수 선언
-let day = 1; // 첫날에 
-let count = 1; // 쌀알 한 톨 받는다
-let sum = 0;
+let day = 1; // 날짜
+let count = 1; // 받을 쌀알 수
+let sum = 0; // 누적된 쌀알 수
 
 // 반복문을 사용하여 쌀알의 개수를 계산
-while (sum < 10000000) {
+while (sum < 1000_0000) {
   // 총 합이 1000만 이라면
+  day++;
   sum += count;
   day++;
   count = count * 2;

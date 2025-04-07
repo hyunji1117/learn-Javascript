@@ -5,7 +5,7 @@
 // 논리합(OR): 피연산자 중 하나라도 true이면 true.
 // 둘 다 false일 때만 false가 된다.
 
-/* console.log(true || true);
+console.log(true || true);
 console.log(true || false);
 console.log(false || true);
 console.log(false || false);
@@ -13,7 +13,8 @@ console.log(false || false);
 var name = 'hong';
 var age = 8;
 var invalidId = id.length < 4 || id.length > 12;
-console.log('id 입력 조건에 맞지 않음', invalidId); //false  */
+console.log('id 입력 조건에 맞지 않음', invalidId); //false 
+// invalidId는 id의 길이가 4보다 작거나 12보다 크면 true가 된다.
 
 // 앞에 값이 참이면 앞의 값을 반환하는 특이한 케이스 연습
 // falsy: 거짓으로 인정하는 값
