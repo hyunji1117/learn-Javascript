@@ -34,6 +34,7 @@
 181720
 */
 
+
 // 입력받기
 const fs = require('fs');
 const inputData = fs.readFileSync(0).toString().trim().split('\n');
@@ -60,6 +61,10 @@ console.log(result3);
 console.log(result4);
 
 // ---
+
+/** CHECKLIST
+ * [ ] 단순 수학계산. 풀어볼 것
+ */
 
 function main() {
   const data = getData();
@@ -101,7 +106,7 @@ main();
  * @returns {object} a, b 속성에 입력값이 저장된 객체
  */
 function getData() {
-  const fs = require("fs");
+  const fs = require("fs");˜
   const fileData = fs.readFileSync(0).toString().trim().split("\n");
 
   const result = new Object();

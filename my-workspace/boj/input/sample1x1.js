@@ -1,7 +1,7 @@
 function main() {
   const data = getData();
   // data에서 값을 꺼내서 문제 해결하는 코드 작성
-  
+
 }
 main();
 
