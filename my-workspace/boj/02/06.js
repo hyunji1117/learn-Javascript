@@ -1,4 +1,4 @@
-/* re
+/*
 제목: 오븐 시계
 설명: 범위가 더 넓은 시간 계산 문제
 제출: https://www.acmicpc.net/submit/2525
@@ -39,20 +39,48 @@ KOI 전자에서는 건강에 좋고 맛있는 훈제오리구이 요리를 간�
 0 13
 */
 
-// 입력받기
-const fs = require('fs');
-const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+function main() {
+  const data = getData();
+  // data에서 값을 꺼내서 문제 해결하는 코드 작성
+  const h = data[0][0];
+  const m = data[0][1];
+  const c = data[1][0];
 
-// 현재 시각 (A: 시, B: 분)과 요리 시간 C
-const [A, B] = input[0].split(' ').map(Number);
-const C = parseInt(input[1], 10);
+  let totalMin = h * 60 + m + c;
 
-// 총 분 계산
-let totalMinutes = A * 60 + B + C;
+  if (totalMin > 60 * 24) {
+    totalMin -= 60 * 24;
+  }
 
-// 종료 시각 계산
-const endHour = Math.floor(totalMinutes / 60) % 24; // 24시간 기준으로 시 계산
-const endMinute = totalMinutes % 60; // 분 계산
+  const result = {
+    h: Math.floor(totalMin / 60),
+    m: totalMin % 60
+  };
 
-// 결과 출력
-console.log(endHour, endMinute);
+  console.log(result.h, result.m);
+}
+main();
+
+/**
+ * 표준 입력장치(콘솔)에서 여러줄로 입력된 줄당 여러 건의 데이터를 읽어서 숫자로 변환한 후
+ * 배열로 저장하여 반환한다.
+ * @returns {[]} 2차원 배열
+ */
+function getData() {
+  const fs = require("fs");
+  // '23 48\n25\n'
+  const fileData = fs.readFileSync(0).toString();
+  // ['23 48', '25']
+  const arr = fileData.trim().split("\n");
+
+  const result = []; // 리턴할 2차원 배열
+  for (let i = 0; i < arr.length; i++) {
+    const row = arr[i]; // '23 48', '25'
+    const rowArr = row.split(' '); // ['23', '48'], ['25']
+    for (let k = 0; k < rowArr.length; k++) {
+      rowArr[k] = isNaN(rowArr[k]) ? rowArr[k] : parseInt(rowArr[k]);
+    }
+    result.push(rowArr);
+  }
+  return result;
+}
