@@ -1,26 +1,22 @@
-// 지정한 수가 소수인지 여부를 반환
-const isPrime = function(num){ // num = 5
-  // 캐시를 위한 코드
-  isPrime._cache = isPrime._cache || {};
-  if(isPrime._cache[num] !== undefined){ // num에 대해서 계산이 끝나고 캐시된 경우
-    return isPrime._cache[num];
-  }
+// ex02-23.js 복사
 
+// 지정한 수가 소수인지 여부를 반환
+let isPrime = (function(num){ // num = 5
   // 소수 판별 코드
   let prime = true;
 
-  for(let i=2; i<=Math.sqrt(num); i++){
+  for(let i=2; i<=num; i++){
     if(num % i === 0){
       prime = false;
       break;
     }
   }
-
-  // 캐시를 위한 코드
-  isPrime._cache[num] = prime; // isPrime._cache[5] = true;
   
   return prime;
-};
+}).memoize();
+
+// isPrime 함수에 메모이제이션 기능 추가
+// isPrime = isPrime.memoize();
 
 console.time('소요시간');
 console.log('3 -> ', isPrime(3));
