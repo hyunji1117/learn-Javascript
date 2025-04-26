@@ -1,4 +1,4 @@
-/* re
+/* 
 제목: 곱셈
 설명: 빈 칸에 들어갈 수는?
 제출: https://www.acmicpc.net/submit/2588
@@ -34,40 +34,51 @@
 181720
 */
 
-
-// 입력받기
 const fs = require('fs');
 const inputData = fs.readFileSync(0).toString().trim().split('\n');
 
-// 첫 번째 숫자와 두 번째 숫자를 변수에 저장
-const a = parseInt(inputData[0], 10);
-const b = parseInt(inputData[1], 10);
+const a = parseInt(inputData[0]);
+const b = inputData[1];
 
-// b의 각 자리수 분리
-const b1 = b % 10; // 1의 자리
-const b2 = Math.floor((b % 100) / 10); // 10의 자리
-const b3 = Math.floor(b / 100); // 100의 자리
+const hundreds = b[0];
+const tensPlace = b[1];
+const onePlace = b[2];
 
-// 곱셈 결과 계산
-const result1 = a * b1; // 472 × 5
-const result2 = a * b2; // 472 × 8
-const result3 = a * b3; // 472 × 3
-const result4 = a * b;  // 최종 결과
+const result1 = a * onePlace;
+const result2 = a * tensPlace;
+const result3 = a * hundreds;
 
-// 결과 출력
 console.log(result1);
 console.log(result2);
 console.log(result3);
-console.log(result4);
+console.log(result1 + result2*10 + result3*100);
+
+
+// const fs = require('fs');
+// const inputData = fs.readFileSync(0).toString().trim().split('\n');
+
+// const a = parseInt(inputData[0], 10);
+// const b = parseInt(inputData[1], 10);
+
+// const b1 = b % 10; // 1의 자리
+// const b2 = Math.floor((b % 100) / 10); // 10의 자리
+// const b3 = Math.floor(b / 100); // 100의 자리
+
+// const result1 = a * b1; // 472 × 5
+// const result2 = a * b2; // 472 × 8
+// const result3 = a * b3; // 472 × 3
+// const result4 = a * b;  // 최종 결과
+
+// console.log(result1);
+// console.log(result2);
+// console.log(result3);
+// console.log(result4);
 
 // ---
 
-/** CHECKLIST
- * [ ] 단순 수학계산. 풀어볼 것
- */
+/* function main() {
+  const data = getData(); */
 
-function main() {
-  const data = getData();
   // data에서 값을 꺼내서 문제 해결하는 코드 작성
   // const n1 = data.a; // 472
   // const n2 = data.b; // 385
@@ -80,14 +91,14 @@ function main() {
   // const n4 = n1 * parseInt((n2-n5*100)/10); // 472 * (385-300)/10 = 472 * 8
   // const n3 = n1 * (n2 % 10); // 472 * 5
 
-  const n1 = data.a; // 472
-  const n2 = String(data.b); // '385'
+ /*  const n1 = data.a; // 472
+  const n2 = String(data.b); // '385' */
 
   // TODO toString() 단원
   // 박상희.toString() => '박상희는 천재다.'
   // String(박상희) !=> '박상희는 천재다.'
 
-  const n3 = n1 * n2[0];
+  /* const n3 = n1 * n2[0];
   const n4 = n1 * n2[1];
   const n5 = n1 * n2[2];
 
@@ -98,14 +109,15 @@ function main() {
   console.log(n5);
   console.log(n6);
 }
-main();
+main(); */
 
 /**
  * 표준 입력장치(콘솔)에서 두 줄로 입력된 줄당 한 건의 데이터를 읽어서 숫자로 변환한 후
  * 객체에 a, b 속성으로 저장하여 반환한다.
  * @returns {object} a, b 속성에 입력값이 저장된 객체
  */
-function getData() {
+
+/* function getData() {
   const fs = require("fs");˜
   const fileData = fs.readFileSync(0).toString().trim().split("\n");
 
@@ -114,4 +126,4 @@ function getData() {
   result.a = isNaN(fileData[0]) ? fileData[0] : parseInt(fileData[0]);
   result.b = isNaN(fileData[1]) ? fileData[1] : parseInt(fileData[1]);
   return result;
-}
+} */
