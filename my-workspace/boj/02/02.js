@@ -1,4 +1,4 @@
-/* re
+/* 
 제목: 시험 성적
 설명: 시험 점수를 성적으로 바꾸는 문제
 제출: https://www.acmicpc.net/submit/9498
@@ -19,11 +19,29 @@
 A
 */
 
-// 입력받기
+const fs = require('fs');
+const input = fs.readFileSync(0).toString().trim().split(' ');
+
+const score = parseInt(input[0]);
+
+if (score >= 90 && score <= 100) {
+  console.log('A');
+} else if (score >= 80 && score < 90) {
+  console.log('B');
+} else if (score >= 70 && score < 80) {
+  console.log('C');
+} else if (score >= 60 && score < 70) {
+  console.log('D');
+} else {
+  console.log('F');
+}
+
+
+/* 입력받기
 const fs = require('fs');
 const input = parseInt(fs.readFileSync('/dev/stdin').toString().trim(), 10);
 
-// 조건문을 사용하여 성적 계산
+조건문을 사용하여 성적 계산
 if (input >= 90) {
   console.log('A');
 } else if (input >= 80) {
@@ -34,4 +52,4 @@ if (input >= 90) {
   console.log('D');
 } else {
   console.log('F');
-}
+} */

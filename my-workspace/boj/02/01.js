@@ -38,28 +38,38 @@ A와 B가 같은 경우에는 '=='를 출력한다.
 // 입력값 예시: 
 // 10 20
 
-const fs = require("fs");
+const { log } = require('console');
+const fs = require('fs');
+const input = fs.readFileSync(0).toString().trim().split(' ');
+
+const a = parseInt(input[0]);
+const b = parseInt(input[1]);
+
+console.log(a > b ? '>' : a < b ? '<' : "==");
+
+
+
+/* const fs = require("fs");
 const fileData = fs.readFileSync(0).toString().trim().split(" ");
-// console.log(fileData);
 
 const a = parseInt(fileData[0]); // 10
-const b = parseInt(fileData[1]); // 20
+const b = parseInt(fileData[1]); // 20 */
 
 
-// 1. 삼항 연산자 사용
+/* 1. 삼항 연산자 사용
 const fs = require("fs");
 const fileData = fs.readFileSync(0).toString().trim().split(" ");
-// console.log(fileData);
+console.log(fileData);
 
 const a = parseInt(fileData[0]);
 const b = parseInt(fileData[1]);
 
 console.log(a > b ? ">" : a < b ? "<" : "==");
 
-// 2. 조건문 사용
+2. 조건문 사용
 const fs = require("fs");
 const fileData = fs.readFileSync(0).toString().trim().split(" ");
-// console.log(fileData);
+console.log(fileData);
 
 const a = parseInt(fileData[0]);
 const b = parseInt(fileData[1]);
@@ -70,4 +80,4 @@ if (a > b) {
   console.log("<");
 } else {
   console.log("==");
-}
+} */

@@ -1,4 +1,4 @@
-/*
+/* 
 제목: 사분면 고르기
 설명: 점이 어느 사분면에 있는지 알아내는 문제
 제출: https://www.acmicpc.net/submit/14681
@@ -45,3 +45,18 @@
 4
 */
 
+const fs = require('fs');
+const input = fs.readFileSync(0).toString().trim().split('\n');
+
+const x = parseInt(input[0]);
+const y = parseInt(input[1]);
+
+if (x > 0 && y > 0) {
+  console.log(1);
+} else if (x < 0 && y > 0) {
+  console.log(2);
+} else if (x < 0 && y < 0) {
+  console.log(3);
+} else {
+  console.log(4);
+}

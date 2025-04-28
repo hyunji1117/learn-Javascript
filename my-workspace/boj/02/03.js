@@ -1,4 +1,4 @@
-/* re
+/* 
 제목: 윤년
 설명: 윤년을 판별하는 문제
 제출: https://www.acmicpc.net/submit/2753
@@ -27,13 +27,25 @@
 0
 */
 
-// 입력받기
+const fs = require('fs');
+const input = fs.readFileSync(0).toString().trim().split(' ');
+
+const isleapYear = parseInt(input[0]);
+
+if ((isleapYear % 4 === 0) && (isleapYear % 100 !== 0 || isleapYear % 400 === 0)) {
+  console.log(1);
+} else {
+  console.log(0);
+}
+
+
+/* 입력받기
 const fs = require('fs');
 const year = parseInt(fs.readFileSync('/dev/stdin').toString().trim(), 10);
 
-// 윤년 판별
+윤년 판별
 if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
   console.log(1); // 윤년이면 1 출력
 } else {
   console.log(0); // 윤년이 아니면 0 출력
-}
+} */
