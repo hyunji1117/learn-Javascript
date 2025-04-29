@@ -46,9 +46,13 @@
 12 2
 */
 
-function main() {
+const fs = require('fs');
+const input = fs.readFileSync(0).toString().trim().split(' ');
+
+
+/* function main() {
   const data = getData();
-  // data에서 값을 꺼내서 문제 해결하는 코드 작성
+  data에서 값을 꺼내서 문제 해결하는 코드 작성 */
 
   /*
   let h = data.a; // 0
