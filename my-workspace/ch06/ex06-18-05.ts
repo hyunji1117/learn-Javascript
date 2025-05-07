@@ -2,24 +2,25 @@
 // ex06-18-04.ts 복사
 
 (()=>{
-  interface DropdownItem {
-    value: string | number;
+  interface DropdownItem<T extends string | number> { // string과 number로 타입 제한
+    value: T;
     selected?: boolean;
   }
 
-  const cityList: DropdownItem[] = [
+  const cityList: DropdownItem<string>[] = [
     { value: 'Seoul', selected: false },
     { value: 'busan' },
     { value: 'GwangJu', selected: true },
   ];
 
-  const zipcodeList: DropdownItem[] = [
+  const zipcodeList: DropdownItem<number>[] = [
     { value: 12345, selected: false },
     { value: 34567, selected: true },
     { value: 56789 },
   ];
 
-  function createDropdownList(list: DropdownItem[]){
+  // function createDropdownList(list: DropdownItem<string | number>[]){
+  function createDropdownList<T extends string | number>(list: DropdownItem<T>[]){
     let value;
     let options = '';
 
@@ -31,6 +32,6 @@
     return `<select>\n${ options }</select>`;
   }
 
-  console.log(createDropdownList(cityList));
-  console.log(createDropdownList(zipcodeList));
+  console.log(createDropdownList<string>(cityList));
+  console.log(createDropdownList<number>(zipcodeList));
 })();
